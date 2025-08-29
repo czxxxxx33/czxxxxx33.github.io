@@ -5,7 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Usa min-height para acomodar conteúdo maior */
+    min-height: 100vh;
     margin: 0;
 }
 
@@ -30,6 +30,10 @@ h1, h2 {
     margin: 20px 0;
     text-align: left;
     width: 100%;
+}
+
+.opcoes-topicos h3, .opcoes-tipo-questao h3 {
+  color: #555;
 }
 
 .opcoes-topicos label, .opcoes-tipo-questao label {
