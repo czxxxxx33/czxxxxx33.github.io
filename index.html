@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Prova de Medicina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="welcome-message" class="overlay">
+        <div class="message-box">
+            <h2>Oi!</h2>
+            <p>Bem-vindo ao simulador de provas da FIBRA, com base em questões anteriores de provas, formativas, roteiros e o Manual do Aluno, esse simulador vai ajudar você a estudar melhor para as provas.</p>
+            <button id="ok-button">Ok</button>
+        </div>
+    </div>
+
+    <div id="discursiva-modal" class="overlay" style="display: none;">
+        <div class="message-box">
+            <h2>Aviso</h2>
+            <p>Você selecionou o modo de questões discursivas. Este modo está em fase beta e pode conter alguns erros de validação.</p>
+            <button id="ok-discursiva-button">Ok</button>
+        </div>
+    </div>
+
+    <div class="container" id="tela-inicial" style="display: none;">
+        <h1>Simulador de Prova - Funções Biológicas</h1>
+        <p>Escolha os tópicos para seu simulado. A prova terá 20 questões, sendo 10 de morfologia e 10 de histologia, e um cronômetro de 30 minutos.</p>
+
+        <div class="opcoes-topicos">
+            <h3>Tópicos:</h3>
+            <label><input type="checkbox" data-topico="Nervoso"> Sistema Nervoso</label>
+            <label><input type="checkbox" data-topico="Urinario"> Sistema Urinário</label>
+            <label><input type="checkbox" data-topico="Cardiovascular"> Sistema Cardiovascular</label>
+            <label><input type="checkbox" data-topico="Reprodutor"> Sistema Reprodutor</label>
+            <label><input type="checkbox" data-topico="Respiratorio"> Sistema Respiratório</label>
+        </div>
+
+        <div class="opcoes-tipo-questao">
+            <h3>Tipo de Questões:</h3>
+            <label><input type="radio" name="tipo-questao" value="objetiva" checked> Somente questões objetivas</label>
+            <label><input type="radio" name="tipo-questao" value="mista"> Questões objetivas e discursivas (beta)</label>
+        </div>
+
+        <button id="iniciar-prova">Iniciar Prova</button>
+    </div>
+
+    <div class="container" id="tela-prova" style="display: none;">
+        <div class="cabecalho">
+            <h2 id="titulo-prova"></h2>
+            <div id="cronometro">Tempo restante: 30:00</div>
+        </div>
+        <div id="questoes-container">
+            </div>
+        <button id="finalizar-prova">Finalizar Prova</button>
+    </div>
+
+    <div class="container" id="tela-resultados" style="display: none;">
+        <h2>Resultado do Simulado</h2>
+        <p>Você acertou <span id="acertos">0</span> de <span id="total-questoes">20</span> questões.</p>
+        <h3>Gabarito</h3>
+        <div id="gabarito-container">
+            </div>
+        <button id="iniciar-novo">Fazer um novo simulado</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
